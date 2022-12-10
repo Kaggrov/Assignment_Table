@@ -7,9 +7,9 @@ const Table = ({state,setState}) => {
 
   
 
-const  myFunction = () => {
+const  DropDownFunction = () => {
     console.log("hello")
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("DropDownMenu").classList.toggle("show");
     }
     
     // Close the dropdown if the user clicks outside of it
@@ -79,7 +79,7 @@ const  myFunction = () => {
         var elements = document.getElementsByTagName('tr');
         console.log(elements)
 
-        for(let i=0;i<elements.length;i++) {
+        for(let i=1;i<elements.length;i++) {
             elements[i].addEventListener("click",()=>{
                 elements[i].style.backgroundColor = "#62B6B7"
             })
@@ -101,8 +101,8 @@ const  myFunction = () => {
                           <th>First Name
 
                           <div className="dropdown">
-                                <button onClick={myFunction} className="dropbtn">⋮</button>
-                                <div id="myDropdown" className="dropdown-content">
+                                <button onClick={DropDownFunction} className="dropbtn">⋮</button>
+                                <div id="DropDownMenu" className="dropdown-content">
                                 <span onClick={handleUnsort} style={{cursor:"pointer"}}>Unsort</span>
                                     <span onClick={handleAscendingOrder} style={{cursor:"pointer"}}>Sort By ASC</span>
                                     <span onClick={handleDescendingOrder} style={{cursor:"pointer"}}>Sort BY DESC</span>
@@ -125,7 +125,7 @@ const  myFunction = () => {
                   </thead>
 
                   <tbody>
-                      {state?.map(person => <tr key={person.id}>
+                      {state.map(person => <tr key={person.id}>
 
                           <td>{person.first_name}</td>
                           <td>{person.last_name}</td>
