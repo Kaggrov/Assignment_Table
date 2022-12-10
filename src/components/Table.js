@@ -60,9 +60,9 @@ const  myFunction = () => {
         setState(state)
     }
 
-    const ChangeRowColor = () => {
+    const ChangeCellColor = () => {
         var elements = document.getElementsByClassName('table__td');
-        console.log(elements)
+
 
         for (var i = 0; i < elements.length; i++) {
         var value = elements[i].innerText || elements[i].textContent;
@@ -75,7 +75,19 @@ const  myFunction = () => {
         }
     }
 
+    const ChangeRowColor = () => {
+        var elements = document.getElementsByTagName('tr');
+        console.log(elements)
+
+        for(let i=0;i<elements.length;i++) {
+            elements[i].addEventListener("click",()=>{
+                elements[i].style.backgroundColor = "#62B6B7"
+            })
+        }
+    }
+
     useEffect(()=>{
+        ChangeCellColor();
         ChangeRowColor();
     },[])
 
